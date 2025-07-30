@@ -24,7 +24,7 @@ Composer (opcional, se desejar organizar dependências)
 bash
 Copiar
 Editar
-git clone https://github.com/seu-usuario/cadastrodelivros.git
+git clone https://github.com/PietraMassarotti/CadastroLivros.git
 2. Configure o ambiente
 Crie um banco de dados no MySQL:
 
