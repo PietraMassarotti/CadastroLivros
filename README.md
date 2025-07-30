@@ -53,6 +53,10 @@ VALUES ('usuario@exemplo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/a
 
 
 
+
+
+
+
 3. Configure a conexão com o banco
 Edite o arquivo config/Database.php com os dados do seu MySQL:
 
