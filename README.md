@@ -36,21 +36,57 @@ Importe o script SQL (se existir) ou crie a tabela de livros e usuários com bas
 
 # 🎲 Script do Banco de Dados
 
-CREATE DATABASE sistema_login;
-USE sistema_login;
+-- -----------------------------------------------------
+-- Schema sistema_livro
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `sistema_livro` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+USE `sistema_livro` ;
+
+-- -----------------------------------------------------
+-- Table `sistema_livro`.`usuarios`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `sistema_livro`.`usuarios` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(255) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
+  `senha_hash` VARCHAR(255) NOT NULL,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `email` (`email` ASC) VISIBLE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
-CREATE TABLE usuarios (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL UNIQUE,
-    senha_hash VARCHAR(255) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+-- -----------------------------------------------------
+-- Table `sistema_livro`.`livros`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `sistema_livro`.`livros` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `titulo` VARCHAR(255) NOT NULL,
+  `autor` VARCHAR(255) NOT NULL,
+  `isbn` VARCHAR(20) NOT NULL,
+  `ano` SMALLINT NOT NULL,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `update_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `usuarios_id` INT NOT NULL,
+  PRIMARY KEY (`id`, `usuarios_id`),
+  UNIQUE INDEX `isbn` (`isbn` ASC) VISIBLE,
+  INDEX `fk_livros_usuarios_idx` (`usuarios_id` ASC) VISIBLE,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE,
+  CONSTRAINT `fk_livros_usuarios`
+    FOREIGN KEY (`usuarios_id`)
+    REFERENCES `sistema_livro`.`usuarios` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
-INSERT INTO usuarios (email, senha_hash) 
-VALUES ('usuario@exemplo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
 
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 
 
