@@ -34,6 +34,25 @@ Editar
 CREATE DATABASE cadastro_livros;
 Importe o script SQL (se existir) ou crie a tabela de livros e usuários com base nos arquivos DAO e Models.
 
+# 🎲 Script do Banco de Dados
+
+CREATE DATABASE sistema_login;
+USE sistema_login;
+
+
+CREATE TABLE usuarios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    senha_hash VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO usuarios (email, senha_hash) 
+VALUES ('usuario@exemplo.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
+
+
+
 3. Configure a conexão com o banco
 Edite o arquivo config/Database.php com os dados do seu MySQL:
 
