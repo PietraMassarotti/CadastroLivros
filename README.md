@@ -11,7 +11,7 @@ Para rodar este projeto localmente, você precisará:
 
 PHP 7.4+
 
-Servidor Apache (ou utilizar o XAMPP/Laragon)
+Servidor XAMPP.
 
 MySQL
 
