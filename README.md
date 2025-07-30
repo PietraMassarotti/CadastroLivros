@@ -147,8 +147,8 @@ CadastroDeLivros/
 │   ├── SenhaValidacao.php
 │   └── ver_senha.php
 │
-├── Desafio-IA.pdf
-└── README.md (sugestão de adicionar)
+
+
 
 
 # ✒️ Autores
