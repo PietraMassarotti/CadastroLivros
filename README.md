@@ -17,7 +17,7 @@ MySQL
 
 Navegador Web
 
-Composer (opcional, se desejar organizar dependências)
+
 
 # 🔧 Instalação
 1. Clone o repositório
