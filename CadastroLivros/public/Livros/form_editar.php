@@ -9,7 +9,7 @@ $id = $_GET["id"];
 
 <head>
     <title>Editar livro</title>
-    <link rel="stylesheet" type="text/css" href="css/tabela.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/form.css" media="screen" />
 </head>
 
 <body>
