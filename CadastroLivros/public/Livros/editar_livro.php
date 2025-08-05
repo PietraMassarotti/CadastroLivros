@@ -2,6 +2,8 @@
 session_start();
 require_once __DIR__ . '/../../models/Livro/LivroDAO.php';
 require_once __DIR__ . '/../../utils/Sanitizacao.php';
+require_once __DIR__ . '/../../utils/IsbnValidacao.php';
+
 
 if (!isset($_SESSION['usuario'])) {
     header("Location: /../login/login.php");
@@ -12,7 +14,7 @@ if (!isset($_SESSION['usuario'])) {
 $id = Sanitizacao::sanitizar($_POST['id']);
 $titulo = Sanitizacao::sanitizar($_POST['titulo']);
 $autor = Sanitizacao::sanitizar($_POST['autor']);
-$isbn = Sanitizacao::sanitizar($_POST['isbn']);
+$isbn = IsbnValidacao::validar($_POST['isbn']);
 $ano = Sanitizacao::sanitizar($_POST['ano']);
 
 $LivroDAO = new LivroDAO();
