@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once __DIR__ . '/../../models/UsuarioDAO.php';
+require_once __DIR__ . '/../../models/Usuario/UsuarioDAO.php';
 require_once __DIR__ . '/../../utils/Sanitizacao.php';
 require_once __DIR__ . '/../../utils/SenhaValidacao.php';
 
