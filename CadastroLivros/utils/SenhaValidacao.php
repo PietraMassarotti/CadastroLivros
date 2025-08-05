@@ -19,7 +19,7 @@ class SenhaValidacao
             return "A senha precisa de no mínimo 1 número";
             exit();
         }
-        return null;
+        return $senha;
     }
 }
 ?>
