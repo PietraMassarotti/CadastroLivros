@@ -3,11 +3,11 @@
 // Classe responsável por gerenciar a conexão com o banco de dados
 class Database {
     // Configurações do banco de dados (privadas para segurança)
-    private $host = 'localhost:3306';        // Endereço do servidor do banco de dados
-    private $db_name = 'sistema_livro'; // Nome do banco de dados a ser utilizado
-    private $username = 'root';         // Usuário do banco de dados (padrão do MySQL)
-    private $password = 'b4nc0D4d0sM1SQL';   //&tec77@info!      // Senha do usuário (padrão em alguns ambientes de desenvolvimento)
-    private $conn;                      // Variável que armazenará a conexão PDO
+    private $host = 'localhost:3306';    // Endereço do servidor do banco de dados
+    private $db_name = 'sistema_livro';  // Nome do banco de dados a ser utilizado
+    private $username = 'root';          // Usuário do banco de dados (padrão do MySQL)
+    private $password = '&tec77@info!';  // Senha do usuário (padrão em alguns ambientes de desenvolvimento)
+    private $conn;                       // Variável que armazenará a conexão PDO
 
     // Método público para obter a conexão com o banco de dados
     public function getConnection() {
