@@ -29,7 +29,7 @@ $resultado = $livroDao->buscarUsuario($usuario);
         <label>Autor:</label>
         <input type="text" name="autor" required>
         <label>ISBN:</label>
-        <input type="number" name="isbn" minlength="13" maxlength="15" required>
+        <input type="text" id="isbn" name="isbn" required>
         <label>Ano:</label>
         <input type="date" name="ano">
         <input type="hidden" name="usuarios_id" value="resultado"/>
