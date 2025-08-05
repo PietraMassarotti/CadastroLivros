@@ -11,7 +11,7 @@ class IsbnValidacao
             echo "O número não pode ser negativo.";
             exit();
         }  
-        return null;
+        return $numero;
     }
 }
 ?>
