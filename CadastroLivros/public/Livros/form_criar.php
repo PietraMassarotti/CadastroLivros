@@ -5,7 +5,7 @@ if (!isset($_SESSION['usuario'])) {
     exit();
 }
 
-require_once __DIR__ . '/../../models/LivroDAO.php';
+require_once __DIR__ . '/../../models/Livro/LivroDAO.php';
 
 $usuario = $_SESSION['usuario']['id'];
 $livroDao = new LivroDAO();
