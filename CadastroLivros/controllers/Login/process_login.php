@@ -18,7 +18,7 @@ if ($usuario) {
     $_SESSION['usuario'] = [
         "id" => $usuario->getId()
     ];
-    header("Location: ../livros/index.php");
+    header("Location: ../../public/Livros/index.php");
 } else {
     echo "Email ou senha incorretos :(";
 }
