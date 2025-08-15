@@ -18,7 +18,7 @@ if (isset($_SESSION['mensagem'])) {
 
 <body>
     <h1>Cadastro</h1>
-    <form action="criar_user.php" method="POST">
+    <form action="../../controllers/Login/criar_user.php" method="POST">
         <label>Nome Completo:</label>
         <input type="text" name="nome" required>
         <label>Email:</label>
