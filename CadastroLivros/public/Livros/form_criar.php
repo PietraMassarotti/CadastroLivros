@@ -23,7 +23,7 @@ $resultado = $livroDao->buscarUsuario($usuario);
 
 <body>
     <h1>Adicionar</h1>
-    <form action="criar_livro.php" method="POST">
+    <form action="../../controllers/Livros/criar_livro.php" method="POST">
         <label>Título:</label>
         <input type="text" name="titulo" required>
         <label>Autor:</label>
