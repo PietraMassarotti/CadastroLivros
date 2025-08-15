@@ -14,7 +14,7 @@ $id = $_GET["id"];
 
 <body>
     <h1>Editar</h1>
-    <form action="editar_livro.php" method="POST">
+    <form action="../../controllers/Livros/editar_livro.php" method="POST">
         <input type="hidden" name="id" value="<?= $id ?>" />
          <label>Título:</label>
         <input type="text" name="titulo" required>
