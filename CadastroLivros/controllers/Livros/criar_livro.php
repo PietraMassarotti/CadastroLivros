@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['usuario'])) {
-    header("Location: ../login/login.php");
+    header("Location: ../../public/login/login.php");
     exit();
 }
 
@@ -28,5 +28,5 @@ $ano = Sanitizacao::sanitizar($_POST['ano']);
 $LivroDAO = new LivroDAO();
 $livro = $LivroDAO->criarLivro($titulo, $autor, $isbn, $ano, $_SESSION['usuario']['id']);
 
-   header("Location: index.php");
+   header("Location: ../../public/Livros/index.php");
 
