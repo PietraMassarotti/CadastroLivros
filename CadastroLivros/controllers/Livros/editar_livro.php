@@ -19,5 +19,5 @@ $ano = Sanitizacao::sanitizar($_POST['ano']);
 
 $LivroDAO = new LivroDAO();
 $livro = $LivroDAO->editarLivro($id, $titulo, $autor, $isbn, $ano);
-header("Location: index.php");
+header("Location: ../../public/Livros/index.php");
 
