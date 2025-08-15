@@ -14,4 +14,4 @@ $id = Sanitizacao::sanitizar($_GET['id']);
 $LivroDAO = new LivroDAO();
 $livro = $LivroDAO->deletarLivro($id);
 
-header("Location: index.php");
+header("Location: ../../public/Livros/index.php");
