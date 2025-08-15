@@ -52,7 +52,7 @@ $resultado = $livroDao->buscarUsuario($usuario);
                     <div class="btn-actions">
                         <td>
                             <a href="form_editar.php?id=<?= $row['id'] ?>" class="btn btn-edit">Editar</a>
-                            <a href="deletar_livro.php?id=<?= $row['id'] ?>" class="btn btn-delete">Deletar</a>
+                            <a href="../../controllers/Livros/deletar_livro.php?id=<?= $row['id'] ?>" class="btn btn-delete">Deletar</a>
                         </td>
                     </div>
                 </tr>
@@ -62,7 +62,7 @@ $resultado = $livroDao->buscarUsuario($usuario);
         </tbody>
     </table>
     <div class="actions">
-        <a href="logout.php" class="btn btn-exit">Sair</a>
+        <a href="../../controllers/Login/logout.php" class="btn btn-exit">Sair</a>
     </div>
 </body>
 
