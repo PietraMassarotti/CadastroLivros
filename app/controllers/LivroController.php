@@ -44,9 +44,10 @@ class LivroController extends BaseController
         $this->render('editar', ['id' => $id]);
     }
 
+  
+
     public function updateLivro(): void
     {
-
         session_start();
 
         if (!isset($_SESSION['usuario'])) {
@@ -58,18 +59,17 @@ class LivroController extends BaseController
         $id = Sanitizacao::sanitizar($_POST['id']);
         $titulo = Sanitizacao::sanitizar($_POST['titulo']);
         $autor = Sanitizacao::sanitizar($_POST['autor']);
-        $isbn = IsbnValidacao::validar($_POST['isbn']);
+        $isbn = Sanitizacao::sanitizar($_POST['isbn']); // <-- Corrigido aqui
         $ano = Sanitizacao::sanitizar($_POST['ano']);
 
-        $mensagemErroIsbn = IsbnValidacao::validar($isbn);
+        // Valida o ISBN corretamente (sem sobrescrever o valor original)
+        $mensagemErroIsbn = IsbnValidacao::validar($isbn); // <-- Corrigido aqui
 
         if ($mensagemErroIsbn) {
             $_SESSION['mensagem'] = $mensagemErroIsbn;
-            // Redireciona de volta para o formulário de edição com o ID
-            $this->redirect('/livro/edit/' . $id); // ← Corrigido
-            exit();
+            $this->redirect('/livro/edit/' . $id);
+            exit(); // <-- Importante garantir que não continue
         }
-
 
         $LivroDAO = new LivroDAO();
         $LivroDAO->editarLivro($id, $titulo, $autor, $isbn, $ano);
