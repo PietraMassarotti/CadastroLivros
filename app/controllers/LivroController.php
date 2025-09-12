@@ -1,9 +1,4 @@
 <?php
-
-/**
- * Controlador de Usuários
- */
-
 declare(strict_types=1);
 
 namespace App\Controllers;
@@ -134,3 +129,4 @@ class LivroController extends BaseController
         $this->redirect('/livro');
     }
 }
+
