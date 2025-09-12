@@ -1,0 +1,140 @@
+body {
+    font-family: 'Comic Sans MS', 'Marker Felt', cursive, sans-serif;
+    background-color: #f0f7e6;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M30,50 Q50,30 70,50 T90,50" stroke="%23d4e8bf" fill="none" stroke-width="2"/></svg>');
+    margin: 0;
+    padding: 20px;
+    color: #5a3e36;
+}
+
+h1 {
+    color: #4a6b3a;
+    text-shadow: 2px 2px 0px #e8d5b5;
+    font-weight: 800;
+    letter-spacing: -1px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    background: #fff9e6;
+    padding: 25px;
+    border-radius: 40px 40px 20px 20px;
+    box-shadow: 
+        0 4px 8px rgba(0,0,0,0.15),
+        inset 0 -10px 20px #e8d5b5;
+    border: 3px dashed #d4e8bf;
+    position: relative;
+    overflow: hidden;
+}
+
+form:after {
+    content: "🐾";
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    opacity: 0.3;
+    font-size: 24px;
+}
+
+label {
+    display: block;
+    margin: 15px 0 8px;
+    font-weight: bold;
+    color: #4a6b3a;
+    font-size: 1.1rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 2px solid #a7c797;
+    border-radius: 12px;
+    background: #ffffff;
+    font-family: inherit;
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+input:focus {
+    border-color: #6b8e23;
+    outline: none;
+    box-shadow: 0 0 8px rgba(107, 142, 35, 0.4);
+    background: #fdfdf6;
+}
+
+/* Texto placeholder mais visível */
+input::placeholder {
+    color: #999;
+    opacity: 0.9;
+}
+
+/* Botões */
+button {
+    background: #8fbc8f;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background: #6b8e23;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Botão do formulário "Voltar" */
+form[action="index.php"] button {
+    background: #e8d5b5;
+    color: #5a3e36;
+}
+
+form[action="index.php"] button:hover {
+    background: #d4c0a0;
+}
+
+/* Ícone decorativo */
+.decor-cat {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 40px;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    form {
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"] {
+        font-size: 15px;
+        padding: 12px;
+    }
+}
