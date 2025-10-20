@@ -59,16 +59,15 @@ class LivroController extends BaseController
         $id = Sanitizacao::sanitizar($_POST['id']);
         $titulo = Sanitizacao::sanitizar($_POST['titulo']);
         $autor = Sanitizacao::sanitizar($_POST['autor']);
-        $isbn = Sanitizacao::sanitizar($_POST['isbn']); // <-- Corrigido aqui
+        $isbn = Sanitizacao::sanitizar($_POST['isbn']); 
         $ano = Sanitizacao::sanitizar($_POST['ano']);
 
-        // Valida o ISBN corretamente (sem sobrescrever o valor original)
-        $mensagemErroIsbn = IsbnValidacao::validar($isbn); // <-- Corrigido aqui
+        $mensagemErroIsbn = IsbnValidacao::validar($isbn); 
 
         if ($mensagemErroIsbn) {
             $_SESSION['mensagem'] = $mensagemErroIsbn;
             $this->redirect('/livro/edit/' . $id);
-            exit(); // <-- Importante garantir que não continue
+            exit();
         }
 
         $LivroDAO = new LivroDAO();
@@ -134,3 +133,4 @@ class LivroController extends BaseController
         $this->redirect('/livro');
     }
 }
+
